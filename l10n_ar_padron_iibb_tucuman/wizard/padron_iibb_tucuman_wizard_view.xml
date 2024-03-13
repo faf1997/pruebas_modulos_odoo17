@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<odoo>
+
+    <data>
+
+        <record id="padron_iibb_tucuman_wizard_form_view" model="ir.ui.view">
+            <field name="name">padron_iibb_tucuman_wizard_form_view</field>
+            <field name="model">padron.iibb.tucuman.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Importar Padrón Tucuman">
+                    <div class="alert alert-warning" role="alert" colspan="2">
+                         <strong><span>Atención:</span></strong>
+                         <p>
+                             Por favor, no modificar los archivos previamente (no es necesario borrar el encabezado).
+                         </p>
+                    </div>
+                    <group string="Archivos">
+                        <field name="file_176" filename="filename_176"/>
+                        <field name="filename_176" invisible="1"/>
+                        <field name="file_116" filename="filename_116"/>
+                        <field name="filename_116" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button type="object" name="import_padron" string="Importar" class="oe_highlight"/>
+                        <button type="special" special="cancel" string="Cancelar"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="import_padron_tucuman_action">
+            <field name="name">Importar Padrón Tucumán</field>
+            <field name="res_model">padron.iibb.tucuman.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="padron_iibb_tucuman_wizard_menu"
+                  name="Actualizar Padrón IIBB Tucumán"
+                  parent="l10n_ar_taxes.taxes_main_menu"
+                  action="import_padron_tucuman_action"
+                  sequence="110"/>
+
+    </data>
+
+</odoo>
+
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

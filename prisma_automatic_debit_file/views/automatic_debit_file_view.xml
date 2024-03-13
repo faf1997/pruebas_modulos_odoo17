@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<odoo>
+
+    <data>
+
+        <record model="ir.ui.view" id="automatic_debit_file_form_view">
+            <field name="name">automatic_debit_file_form_view</field>
+            <field name="model">automatic.debit.file</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form create="false" delete="false">
+                    <header>
+                        <field name="invoice_to_pay" invisible="1"/>
+                        <field name="payment_ids" invisible="1"/>
+                        <button name="generate_payments" type="object" string="Generar pagos" attrs="{'invisible': ['|', ('invoice_to_pay', '=', False), ('state', '!=', 'confirmed')]}" class="btn btn-primary"/>
+                        <button name="action_confirm" type="object" string="Confirmar" attrs="{'invisible': [('state', '!=', 'pending')]}" class="btn btn-primary"/>
+                        <button name="action_pending" type="object" string="Volver a pendiente" attrs="{'invisible': [('state', '=', 'pending')]}"/>
+                        <button name="action_rejected" type="object" string="Rechazar" attrs="{'invisible': [('state', '=', 'rejected')]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_payments"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-list-ul"
+                                    attrs="{'invisible': [('payment_ids', '=', [])]}">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Pagos</span>
+                                </div>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date_from" readonly="1"/>
+                                <field name="generation_datetime" readonly="1"/>
+                                <field name="payment_term_id" readonly="1"/>
+                                <field name="payment_journal_id" attrs="{'readonly': [('state', '!=', 'pending')]}"/>
+                                <field name="payment_type_journal_id" attrs="{'readonly': [('state', '!=', 'pending')]}"/>
+                            </group>
+                            <group>
+                                <field name="date_to" readonly="1"/>
+                                <field name="file" filename="filename" readonly="1"/>
+                                <field name="filename" invisible="True"/>
+                                <field name="note"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="invoices" string="Facturas">
+                                <group>
+                                    <field name="invoice_ids" nolabel="1">
+                                        <tree editable="bottom" create="false" delete="false">
+                                            <field name="invoice_id" readonly="1"/>
+                                            <field name="partner_id" readonly="1"/>
+                                            <field name="to_pay" attrs="{'readonly': [('payment_id', '!=', False)]}"/>
+                                            <field name="payment_id" readonly="1"/>
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <group>
+                                                    <field name="invoice_id"/>
+                                                    <field name="partner_id"/>
+                                                </group>
+                                                <group>
+                                                    <field name="to_pay"/>
+                                                    <field name="payment_id"/>
+                                                </group>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="automatic_debit_file_tree_view">
+            <field name="name">automatic_debit_file_tree_view</field>
+            <field name="model">automatic.debit.file</field>
+            <field name="arch" type="xml">
+                <tree create="false" delete="false">
+                    <field name="generation_datetime" readonly="1"/>
+                    <field name="payment_term_id"/>
+                    <field name="file" filename="filename"/>
+                    <field name="filename" invisible="True"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="automatic_debit_file_action_view" model="ir.actions.act_window">
+            <field name="name">Archivos de débito automático</field>
+            <field name="res_model">automatic.debit.file</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="account_reports_prisma_menu" 
+            name="Prisma" 
+            parent="account.menu_finance_reports"
+            sequence="100" 
+            groups="account.group_account_manager"
+        />
+
+        <menuitem
+            id="automatic_debit_file_menu"
+            name="Archivos de débito automático"
+            action="automatic_debit_file_action_view"
+            parent="prisma_automatic_debit_file.account_reports_prisma_menu"
+            sequence="101"
+            groups="account.group_account_manager"
+        />
+
+    </data>
+
+</odoo>
+
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

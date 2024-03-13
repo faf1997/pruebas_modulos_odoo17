@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<odoo>
+
+    <data>
+
+        <record id="sale_order_form_view" model="ir.ui.view">
+            <field name="name">sale_order_form_view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="change_cashflow_date"
+                            string="Cambiar fecha cashflow"
+                            type="object"
+                            class="btn-primary"
+                            groups="account.group_account_manager"
+                            attrs="{'invisible': [('state', 'not in', ('sale', 'done', 'cancel'))]}"
+                    />
+                </xpath>
+                <xpath expr="//field[@name='validity_date']" position="after">
+                    <field name="cash_flow_date"
+                           groups="account.group_account_manager"
+                    />
+                </xpath>
+                <xpath expr="//notebook//page//field[@name='order_line']//tree//field[@name='name']" position="after">
+                    <field name="admission_date"
+                           groups="account.group_account_manager"
+                           string="Fecha cash flow"
+                    />
+                </xpath>
+                <xpath expr="//notebook//page//field[@name='order_line']//form//group//group//field[@name='tax_id']" position="after">
+                    <field name="admission_date"
+                           groups="account.group_account_manager"
+                           string="Fecha cash flow"
+                    />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>
+
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

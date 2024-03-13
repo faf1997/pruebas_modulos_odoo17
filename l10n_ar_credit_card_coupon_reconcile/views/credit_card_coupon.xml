@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<odoo>
+
+    <record model="ir.ui.view" id="credit_card_coupon_form">
+        <field name="name">credit_card_coupon_form</field>
+        <field name="model">credit.card.coupon</field>
+        <field name="inherit_id" ref="l10n_credit_card_coupon.credit_card_coupon_form"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="credit_card_coupon_reconcile_id"/>
+            </field>
+            <field name="state" position="attributes">
+                <attribute name="statusbar_visible">draft,closed,settled</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="credit_card_coupon_tree">
+        <field name="name">credit_card_coupon_tree</field>
+        <field name="model">credit.card.coupon</field>
+        <field name="inherit_id" ref="l10n_credit_card_coupon.credit_card_coupon_tree"/>
+        <field name="arch" type="xml">
+            <field name="payment_id" position="after">
+                <field name="credit_card_coupon_reconcile_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="credit_card_coupon_search">
+        <field name="name">credit_card_coupon_search</field>
+        <field name="model">credit.card.coupon</field>
+        <field name="inherit_id" ref="l10n_credit_card_coupon.credit_card_coupon_search"/>
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <field name="credit_card_coupon_reconcile_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="to_settle_credit_card_coupon_action" model="ir.actions.act_window">
+        <field name="name">Cupones a liquidar</field>
+        <field name="res_model">credit.card.coupon</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('credit_card_coupon_reconcile_id','=',False)]</field>
+    </record>
+
+    <menuitem
+        id="to_settle_credit_card_coupon_menu"
+        name="Cupones a liquidar"
+        action="to_settle_credit_card_coupon_action"
+        parent="l10n_credit_cards.credit_card_main_menu"
+        sequence="155"/>
+
+</odoo>
+
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

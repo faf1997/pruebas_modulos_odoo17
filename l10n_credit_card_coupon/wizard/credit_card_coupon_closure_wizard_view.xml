@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<odoo>
+
+    <record id="credit_card_coupon_closure_wizard_form" model="ir.ui.view">
+        <field name="name">credit_card_coupon_closure_wizard_form</field>
+        <field name="model">credit.card.coupon.closure.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cierre de cupones">
+                <group>
+                    <field name="closure_date"/>
+                </group>
+                <footer>
+                    <button name="close_coupons" string="Cerrar cupones" type="object" class="oe_highlight"/>
+                    <button special="cancel" string="Cancelar" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window 
+        id="action_credit_card_coupon_closure_wizard" 
+        name="Cerrar cupones" 
+        res_model="credit.card.coupon.closure.wizard" 
+        binding_model="credit.card.coupon" 
+        binding_views="list,form" 
+        view_mode="form" 
+        view_id="credit_card_coupon_closure_wizard_form" 
+        target="new"/>
+
+</odoo>
+
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

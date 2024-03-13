@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<odoo>
+
+    <data>
+
+        <record id="partner_data_get_wizard" model="ir.ui.view">
+            <field name="name">Obtener datos de partner</field>
+            <field name="model">partner.data.get.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Obtener datos de partner">
+                    <div class="alert alert-warning" role="alert">
+                         <span><strong>ATENCION</strong>: Se sobreescribirán los datos del partner. Si el
+                             mismo no es correspondiente a Responsable Inscripto o Monotributista,
+                             se le colocará como posición fiscal 'IVA exento', y si no posee impuestos se dejará
+                             en blanco. Puede modificarlo desde la vista formulario del partner, 
+                             solapa 'Contabilidad'
+                         </span>
+                     </div>
+                    <group>
+                        <field name="vat"/>
+                        <field name="partner_id"/>
+                        <field name="write_partner"/>
+                    </group>
+                    <footer>
+                        <button name="get_and_write_data"
+                                string="Obtener datos"
+                                class="oe_highlight"
+                                type="object"
+                        />
+                        <button class="oe_link"
+                                string='Cancel'
+                                special='cancel'
+                        />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="partner_data_get_wizard_action" model="ir.actions.act_window">
+            <field name="name">Obtener datos de partner desde AFIP</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">partner.data.get.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+
+</odoo>
+
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

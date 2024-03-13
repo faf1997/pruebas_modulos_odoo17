@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizard_currency_exchange_form_view">
+            <field name="name">wizard.currency.exchange.form.view</field>
+            <field name="model">wizard.currency.exchange</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="current_currency" required="1" readonly="1"/>
+                        <field name="new_currency" required="1" />
+                        <field name="exchange_rate" required="1" />
+                        <field name="move_id" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button type="object"
+                            name="action_calculate_new_prices"
+                            string="Cambiar moneda"
+                            class="oe_highlight" />
+                            o <button class="oe_link" special="cancel"
+                            string="Cancelar" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_currency_exchange" model="ir.actions.act_window">
+            <field name="name">Cambiar tipo de moneda</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.currency.exchange</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+-->

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="0">
+
+        <record id="ar_escala_ganancias_1" model="ywt.moogah.profit.scales.tables.header">
+            <field name="name">Escala Ganancias 1</field>
+		</record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_1_1">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="from_dollar" eval="0.00"/>
+            <field name="to_dollar" eval="8000.00"/>
+            <field name="plus_dollar" eval="0.00"/>
+            <field name="plus_percentage" eval="5.00"/>
+            <field name="value_over_dollar" eval="0.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_1_2">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="from_dollar" eval="8000.01"/>
+            <field name="to_dollar" eval="16000.00"/>
+            <field name="plus_dollar" eval="400.00"/>
+            <field name="plus_percentage" eval="9.00"/>
+            <field name="value_over_dollar" eval="8000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_1_3">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="from_dollar" eval="16000.01"/>
+            <field name="to_dollar" eval="24000.00"/>
+            <field name="plus_dollar" eval="1120.00"/>
+            <field name="plus_percentage" eval="12.00"/>
+            <field name="value_over_dollar" eval="16000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_1_4">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="from_dollar" eval="24000.01"/>
+            <field name="to_dollar" eval="32000.00"/>
+            <field name="plus_dollar" eval="2080.00"/>
+            <field name="plus_percentage" eval="15.00"/>
+            <field name="value_over_dollar" eval="24000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_1_5">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="from_dollar" eval="32000.01"/>
+            <field name="to_dollar" eval="48000.00"/>
+            <field name="plus_dollar" eval="3280.00"/>
+            <field name="plus_percentage" eval="19.00"/>
+            <field name="value_over_dollar" eval="32000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_1_6">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="from_dollar" eval="48000.01"/>
+            <field name="to_dollar" eval="64000.00"/>
+            <field name="plus_dollar" eval="6320.00"/>
+            <field name="plus_percentage" eval="23.00"/>
+            <field name="value_over_dollar" eval="48000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_1_7">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="from_dollar" eval="64000.01"/>
+            <field name="to_dollar" eval="96000.00"/>
+            <field name="plus_dollar" eval="10000.00"/>
+            <field name="plus_percentage" eval="27.00"/>
+            <field name="value_over_dollar" eval="64000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_1_8">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="from_dollar" eval="96000.01"/>
+            <field name="to_dollar" eval="9999999999.00"/>
+            <field name="plus_dollar" eval="18640.00"/>
+            <field name="plus_percentage" eval="31.00"/>
+            <field name="value_over_dollar" eval="96000.00"/>
+        </record>
+
+        <record id="ar_escala_ganancias_2" model="ywt.moogah.profit.scales.tables.header">
+            <field name="name">Escala Ganancias 2</field>
+		</record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_2_1">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_2"/>
+            <field name="from_dollar" eval="0.00"/>
+            <field name="to_dollar" eval="71000.00"/>
+            <field name="plus_dollar" eval="0.00"/>
+            <field name="plus_percentage" eval="5.00"/>
+            <field name="value_over_dollar" eval="0.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_2_2">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_2"/>
+            <field name="from_dollar" eval="71000.01"/>
+            <field name="to_dollar" eval="142000.00"/>
+            <field name="plus_dollar" eval="3550.00"/>
+            <field name="plus_percentage" eval="9.00"/>
+            <field name="value_over_dollar" eval="71000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_2_3">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_2"/>
+            <field name="from_dollar" eval="142000.01"/>
+            <field name="to_dollar" eval="213000.00"/>
+            <field name="plus_dollar" eval="9940.00"/>
+            <field name="plus_percentage" eval="12.00"/>
+            <field name="value_over_dollar" eval="142000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_2_4">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_2"/>
+            <field name="from_dollar" eval="213000.01"/>
+            <field name="to_dollar" eval="284000.00"/>
+            <field name="plus_dollar" eval="18460.00"/>
+            <field name="plus_percentage" eval="15.00"/>
+            <field name="value_over_dollar" eval="213000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_2_5">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_2"/>
+            <field name="from_dollar" eval="284000.01"/>
+            <field name="to_dollar" eval="426000.00"/>
+            <field name="plus_dollar" eval="29110.00"/>
+            <field name="plus_percentage" eval="19.00"/>
+            <field name="value_over_dollar" eval="284000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_2_6">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_2"/>
+            <field name="from_dollar" eval="426000.01"/>
+            <field name="to_dollar" eval="568000.00"/>
+            <field name="plus_dollar" eval="56090.00"/>
+            <field name="plus_percentage" eval="23.00"/>
+            <field name="value_over_dollar" eval="426000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_2_7">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_2"/>
+            <field name="from_dollar" eval="568000.01"/>
+            <field name="to_dollar" eval="852000.00"/>
+            <field name="plus_dollar" eval="88750.00"/>
+            <field name="plus_percentage" eval="27.00"/>
+            <field name="value_over_dollar" eval="568000.00"/>
+        </record>
+
+        <record model="ywt.moogah.profit.scales.tables" id="ywt_moogah_profit_scales_tables_2_8">
+            <field name="table_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_2"/>
+            <field name="from_dollar" eval="852000.01"/>
+            <field name="to_dollar" eval="999999999.00"/>
+            <field name="plus_dollar" eval="165430.00"/>
+            <field name="plus_percentage" eval="31.00"/>
+            <field name="value_over_dollar" eval="852000.00"/>
+        </record>
+      
+    </data>
+
+</odoo>
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+<!-- Retention Rules para Ganancias con Escalas -->
+        <record model="retention.retention.rule" id="ret_rule_ganancias_efectuada_25">
+            <field name="retention_id" ref="l10n_ar.retention_retention_ganancias_efectuada"/>
+            <field name="activity_id" ref="l10n_ar_retentions.ret_act_25"/>
+            <field name="scale_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="not_applicable_minimum">16830</field>
+            <field name="minimum_tax">0</field>
+            <field name="not_registered_percentage">28</field>
+            <field name="percentage">100</field>
+            <field name="exclude_minimum">1</field>
+            <!--field name="use_scale">1</field-->
+         </record>
+
+        <record model="retention.retention.rule" id="ret_rule_ganancias_efectuada_110">
+            <field name="retention_id" ref="l10n_ar.retention_retention_ganancias_efectuada"/>
+            <field name="activity_id" ref="l10n_ar_retentions.ret_act_110"/>
+            <field name="scale_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="not_applicable_minimum">10000</field>
+            <field name="minimum_tax">0</field>
+            <field name="not_registered_percentage">28</field>
+            <field name="percentage">100</field>
+            <field name="exclude_minimum">1</field>
+            <!--field name="use_scale">1</field-->
+         </record>
+    
+        <record model="retention.retention.rule" id="ret_rule_ganancias_efectuada_116">
+            <field name="retention_id" ref="l10n_ar.retention_retention_ganancias_efectuada"/>
+            <field name="activity_id" ref="l10n_ar_retentions.ret_act_116"/>
+            <field name="scale_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="not_applicable_minimum">67170</field>
+            <field name="minimum_tax">0</field>
+            <field name="not_registered_percentage">28</field>
+            <field name="percentage">100</field>
+            <field name="exclude_minimum">1</field>
+            <!--field name="use_scale">1</field-->
+         </record> 
+
+        <record model="retention.retention.rule" id="ret_rule_ganancias_efectuada_116B">
+            <field name="retention_id" ref="l10n_ar.retention_retention_ganancias_efectuada"/>
+            <field name="activity_id" ref="l10n_ar_retentions.ret_act_116B"/>
+            <field name="scale_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_2"/>
+            <field name="not_applicable_minimum">16830</field>
+            <field name="minimum_tax">0</field>
+            <field name="not_registered_percentage">28</field>
+            <field name="percentage">100</field>
+            <field name="exclude_minimum">1</field>
+            <!--field name="use_scale">1</field-->
+         </record>
+
+        <record model="retention.retention.rule" id="ret_rule_ganancias_efectuada_124">
+            <field name="retention_id" ref="l10n_ar.retention_retention_ganancias_efectuada"/>
+            <field name="activity_id" ref="l10n_ar_retentions.ret_act_124"/>
+            <field name="scale_id" ref="l10n_ar_retentions_profit_advance.ar_escala_ganancias_1"/>
+            <field name="not_applicable_minimum">16830</field>
+            <field name="minimum_tax">0</field>
+            <field name="not_registered_percentage">28</field>
+            <field name="percentage">100</field>
+            <field name="exclude_minimum">1</field>
+            <!--field name="use_scale">1</field-->
+         </record>
+
+    </data>
+
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_prisma_card_basic,partner_prisma_card_basic,model_partner_prisma_card,base.group_user,1,0,0,0
+access_partner_prisma_card_user,partner_prisma_card_user,model_partner_prisma_card,account.group_account_user,1,0,0,0
+access_partner_prisma_card_manager,partner_prisma_card_manager,model_partner_prisma_card,account.group_account_manager,1,1,1,1

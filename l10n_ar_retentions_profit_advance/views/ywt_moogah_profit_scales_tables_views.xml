@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	  <record id="ywt_moogah_profit_scales_tables_tree_view3" model="ir.ui.view">
+	        <field name="name">ywt.moogah.profit.scales.tables.tree.view3</field>
+	        <field name="model">ywt.moogah.profit.scales.tables.header</field>
+	        <field name="arch" type="xml">
+	            <tree string="Tabla Escala Ganancias">
+	                <field name="name"/>
+	            </tree>
+	        </field>
+	  </record>
+
+	  <record id="ywt_moogah_profit_scales_tables_form_view2" model="ir.ui.view">
+	        <field name="name">ywt.moogah.profit.scales.tables.form.view2</field>
+	        <field name="model">ywt.moogah.profit.scales.tables.header</field>
+	        <field name="arch" type="xml">
+	            <form string="Tabla Escala Ganancias">
+	                <sheet>
+						<group>
+							<field name="name" required="1"/>
+						</group>
+					<notebook>
+						<page string="Lines">
+							<field name="line_ids">
+								<tree>
+									<field name="from_dollar" required="1"/>
+	                				<field name="to_dollar" required="1"/>
+	                				<field name="plus_dollar" required="1"/>
+	                				<field name="plus_percentage" required="1"/>
+	                				<field name="value_over_dollar" required="1"/>
+								</tree>
+							</field>
+						</page>
+					</notebook>
+					</sheet>
+
+				</form>
+	        </field>
+	  </record>
+
+	<record id="ywt_moogah_profit_scales_tables_action" model="ir.actions.act_window">
+	        <field name="name">Profit Scales Table</field>
+	        <field name="type">ir.actions.act_window</field>
+	        <field name="res_model">ywt.moogah.profit.scales.tables.header</field>
+	        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="ywt_moogah_profit_scales_tables_menu"
+			  action="ywt_moogah_profit_scales_tables_action"
+			  parent="l10n_ar_taxes.taxes_main_menu"
+			  name="Profit Scales Tables"
+			  sequence="99"/>
+
+	<record id="view_partner_property_form2" model="ir.ui.view">
+		<field name="name">view.partner.property.form2</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="account.view_partner_property_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='start_date']" position="after">
+				<field name="income_wh_registration"/>
+			</xpath>
+		</field>
+	</record>
+
+ </odoo>

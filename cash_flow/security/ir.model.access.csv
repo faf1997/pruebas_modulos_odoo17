@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_cash_flow_configuration,cash_flow_configuration,model_cash_flow_configuration,l10n_treasury.group_account_treasury_manager,1,1,1,1
+access_cash_flow,account_cash_flow,model_account_cash_flow,l10n_treasury.group_account_treasury_manager,1,1,1,1
+access_cash_flow_line,account_cash_flow_line,model_account_cash_flow_line,l10n_treasury.group_account_treasury_manager,1,1,1,1

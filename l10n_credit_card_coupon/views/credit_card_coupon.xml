@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<odoo>
+
+    <record model="ir.ui.view" id="credit_card_coupon_form">
+        <field name="name">credit_card_coupon_form</field>
+        <field name="model">credit.card.coupon</field>
+        <field name="arch" type="xml">
+            <form create="false" delete="false">
+                <header>
+                    <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,closed"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="name" class="oe_inline" readonly="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="credit_card_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="payment_plan_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="presentation_date"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="payment_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="user_id"/>
+                            <field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"
+                                   attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                    </group>
+                    <group string="Escaneo" name="scan">
+                        <field name="scan" widget="image" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="credit_card_coupon_tree">
+        <field name="name">credit_card_coupon_tree</field>
+        <field name="model">credit.card.coupon</field>
+        <field name="arch" type="xml">
+            <tree create="false"
+                  delete="false" decoration-info="state=='approved'" decoration-success="state=='closed'">
+                <field name="name" string="N° Cupón"/>
+                <field name="credit_card_id"/>
+                <field name="payment_plan_id"/>
+                <field name="date"/>
+                <field name="closure_date"/>
+                <field name="estimated_date"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}" sum="Total cupones"/>
+                <field name="estimated_amount" widget="monetary" options="{'currency_field': 'currency_id'}" sum="Total estimado"/>
+                <field name="payment_id"/>
+                <field name="user_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="credit_card_coupon_search">
+        <field name="name">credit_card_coupon_search</field>
+        <field name="model">credit.card.coupon</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="N° Cupón"/>
+                <field name="amount"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="credit_card_coupon_action" model="ir.actions.act_window">
+        <field name="name">Cupones</field>
+        <field name="res_model">credit.card.coupon</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="credit_card_coupon_menu"
+        name="Cupones"
+        action="credit_card_coupon_action"
+        parent="l10n_credit_cards.credit_card_main_menu"
+        sequence="150"/>
+
+</odoo>
+
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

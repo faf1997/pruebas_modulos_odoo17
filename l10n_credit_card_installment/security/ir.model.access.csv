@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+credit_card_installment_read,credit_card_installment_read,model_credit_card_installment,l10n_treasury.group_account_treasury_user,1,0,0,0
+credit_card_installment_account,credit_card_installment_account,model_credit_card_installment,account.group_account_invoice,1,1,1,1
+credit_card_installment_manager,credit_card_installment_manager,model_credit_card_installment,l10n_treasury.group_account_treasury_manager,1,1,1,1

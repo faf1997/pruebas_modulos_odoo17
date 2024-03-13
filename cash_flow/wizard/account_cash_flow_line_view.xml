@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<odoo>
+
+    <data>
+
+        <!-- PIVOT -->
+        <record model="ir.ui.view" id="account_cash_flow_line_graph">
+            <field name="name">account_cash_flow_line_graph</field>
+            <field name="model">account.cash.flow.line</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph string="Cash flow" stacked="False">
+                    <field name="date" type="col"/>
+                    <field name="accumulated" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        <!--GRAPH-->
+        <record model="ir.ui.view" id="account_cash_flow_line_pivot">
+            <field name="name">account_cash_flow_line_pivot</field>
+            <field name="model">account.cash.flow.line</field>
+            <field name="type">pivot</field>
+            <field name="arch" type="xml">
+                <pivot string="Cash flow">
+                    <field name="date" type="col"/>
+                    <field name="balance" type="measure"/>
+                    <field name="reference"/>
+                </pivot>
+            </field>
+        </record>
+        <!--TREE-->
+        <record model="ir.ui.view" id="account_cash_flow_line_tree">
+            <field name="name">account_cash_flow_line_tree</field>
+            <field name="model">account.cash.flow.line</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="date"/>
+                    <field name="reference"/>
+                    <field name="debit"/>
+                    <field name="credit"/>
+                    <field name="balance"/>
+                    <field name="accumulated"/>
+                </tree>
+            </field>
+        </record>
+        <!-- SEARCH -->
+        <record model="ir.ui.view" id="account_cash_flow_line_search">
+            <field name="name">account.cash.flow.line.search</field>
+            <field name="model">account.cash.flow.line</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="reference"/>
+                </search>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>
+
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

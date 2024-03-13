@@ -1,3 +1,0 @@
-id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-l10n_ar_perception_arba_user,l10n_ar_perceptions_arba.user,model_perception_arba,base.group_user,1,0,0,0
-l10n_ar_perception_arba_manager,l10n_ar_perceptions_arba.manager,model_perception_arba,account.group_account_invoice,1,1,1,1

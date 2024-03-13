@@ -1,3 +1,0 @@
-id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-l10n_ar_padron_iibb_caba_padron_iibb_caba_user,l10n_ar_padron_iibb_caba.padron_iibb_caba.user,model_padron_iibb_caba,base.group_user,1,0,0,0
-l10n_ar_padron_iibb_caba_wizard_padron_iibb_caba_user,l10n_ar_padron_iibb_caba.wizard_padron_iibb_caba.user,model_padron_iibb_caba_wizard,base.group_user,1,1,1,1

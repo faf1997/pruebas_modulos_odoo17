@@ -1,3 +1,0 @@
-id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-l10n_ar_retention_arba_user,l10n_ar_retentions_arba.user,model_retention_arba,base.group_user,1,0,0,0
-l10n_ar_retention_arba_manager,l10n_ar_retentions_arba.manager,model_retention_arba,account.group_account_invoice,1,1,1,1

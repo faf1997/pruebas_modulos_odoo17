@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_perception_agip_manager,perception.agip manager,model_perception_agip,account.group_account_manager,1,1,1,1
-access_perception_agip_user,perception.agip user,model_perception_agip,account.group_account_invoice,1,0,0,0

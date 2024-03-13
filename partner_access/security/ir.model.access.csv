@@ -1,0 +1,6 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+res_partner_access_category_user,res_partner_access_category_user,model_res_partner_access_category,group_access_user,1,0,0,0
+res_partner_access_category_manager,res_partner_access_category_manager,model_res_partner_access_category,group_access_manager,1,1,1,1
+res_partner_access_user,res_partner_access_user,model_res_partner_access,group_access_user,1,0,0,0
+res_partner_access_manager,res_partner_access_manager,model_res_partner_access,group_access_manager,1,1,1,1
+

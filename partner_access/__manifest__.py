@@ -20,7 +20,7 @@
 
     'name': 'partner_access',
 
-    'version': '1.1',
+    'version': '17.0.1.0.0',
 
     'summary': 'Accesos para Partners',
 
